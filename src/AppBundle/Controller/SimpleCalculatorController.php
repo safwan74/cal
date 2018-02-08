@@ -15,7 +15,7 @@ class SimpleCalculatorController extends Controller
     public function calculateAction(Request $request)
     {
         $result = "";
-        $op = "";
+        
         $form = $this->createForm(CalculateType::class);
         $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) 
@@ -31,7 +31,7 @@ class SimpleCalculatorController extends Controller
             array(
                 'form'=>$form->createView(),
                 'result' => $result,
-                'op' => $op,
+                
             
         ));
     }
